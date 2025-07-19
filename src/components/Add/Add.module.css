@@ -1,0 +1,175 @@
+.AddWrapper {
+  width: 500px;
+  /* aspect-ratio: 1 / 1; */
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  gap: 20px;
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  background-color: white;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.AddModalTitle {
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: x-large;
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+}
+
+.AddNameWrapper {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.ShoeNameLabel {
+  width: 100px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* font-size: large;
+  font-weight: bold; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* color: #0f61ef; */
+  font-weight: bold;
+  font-size: 0.8rem;
+  font-family: "Quicksand", sans-serif;
+  color: #414956;
+}
+
+.ShoeNameInput {
+  /* width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 10px;
+  font-size: large; */
+  display: block;
+  width: 450px;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #d9e2f1;
+  background-color: #fff;
+  color: #414956;
+  font-size: 0.8rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.AddImgWrapper {
+  width: 100%;
+  height: 40px;
+  margin: 20px 0 0 0;
+  padding: 0 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.ShoeImgAddBtnWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.ShoeImgBtn {
+  width: 100px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+}
+
+.ShoeImgLink {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: medium;
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+}
+
+.Buttons {
+  /* width: 100%; */
+  height: 50px;
+  margin: 30px 0 0 0;
+  padding: 0 15px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.ShoeImgCancelBtn {
+  width: 100px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+}
+
+.ShoeImgAddBtn {
+  width: 120px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+}
