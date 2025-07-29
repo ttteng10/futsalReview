@@ -58,6 +58,7 @@ export default function Home() {
                     key={item.id}
                     className={styles.shoeDiv}
                     onClick={() => handleNav(item.id)}
+                    title={item.shoe}
                   >
                     <img
                       src={item.img}

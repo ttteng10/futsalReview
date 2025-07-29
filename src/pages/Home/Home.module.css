@@ -14,17 +14,18 @@
   /* width: 100%; */
   /* margin: 10px 0 0 0; */
   width: 80%;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  /* gap: 5px; */
+  row-gap: 10px;
+  column-gap: 10px;
   box-sizing: border-box;
 }
 
 .shoeDiv {
-  width: calc(100% / 5);
+  width: calc(95% / 5);
   margin: 0;
   padding: 0;
   display: flex;
@@ -33,6 +34,15 @@
   align-items: center;
   box-sizing: border-box;
   cursor: pointer;
+  border-radius: 10px;
+
+  transform: translateY(-5px); /* 5px 위로 이동 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 아래쪽 그림자 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.shoeDiv:hover {
+  transform: translateY(-10px); /* 더 위로 이동 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* 더 진한 그림자 */
 }
 
 .shoeImg {
@@ -41,12 +51,13 @@
   padding: 0;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .shoeInform {
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
