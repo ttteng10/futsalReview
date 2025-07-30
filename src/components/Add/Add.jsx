@@ -73,8 +73,8 @@ export default function Add({ setModalVisible }) {
     <motion.div
       className={styles.AddWrapper}
       variants={{
-        hidden: { opacity: 0, x: "90%", y: "0%" },
-        visible: { opacity: 1, x: "90%", y: "20%" },
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
       }}
       initial="hidden"
       animate="visible"
