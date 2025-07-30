@@ -13,7 +13,7 @@ import {
   addDetailComment,
   getCommentById,
 } from "../../data/supabaseClient";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 import Loading from "../../components/Loading/Loading";
 
 const brandKR = new Map([
@@ -33,13 +33,23 @@ export default function Detail() {
   const [comment, setComment] = useState("");
   const commentRef = useRef();
   const navigate = useNavigate();
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    const id = pathname.split("/").pop();
+    const liked = localStorage.getItem(`liked-${id}`);
+    if (liked === "true") {
+      setLikeState(true);
+    }
+  }, []);
   async function handleIncrement(id) {
     setLikeState(true);
+    localStorage.setItem(`liked-${id}`, "true");
     await incrementLike(id);
     navigate(`/home/detail/${id}`);
   }
   async function handleDecrement(id) {
     setLikeState(false);
+    localStorage.removeItem(`liked-${id}`);
     await decrementLike(id);
     navigate(`/home/detail/${id}`);
   }
