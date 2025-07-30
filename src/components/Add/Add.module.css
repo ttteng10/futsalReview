@@ -199,6 +199,7 @@
   font-size: 0.8rem;
   font-family: "Quicksand", sans-serif;
   line-height: normal;
+  resize: none;
 }
 .CommentLenLabel {
   width: 450px;
