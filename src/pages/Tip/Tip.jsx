@@ -8,20 +8,16 @@ import {
 import styles from "./Tip.module.css";
 import { Suspense, useState, useRef } from "react";
 import { addTip, getAllTips } from "../../data/supabaseClient";
+import { AddTip } from "../../components/Add/Add";
 
 export default function Tip() {
   const navigate = useNavigate();
   const { tipData } = useLoaderData();
   const [comment, setComment] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
   const commentRef = useRef();
-  async function handleAddTip() {
-    if (comment !== "") {
-      await addTip(comment);
-      setComment("");
-      navigate(`/home/tip`);
-    } else {
-      commentRef.current.focus();
-    }
+  function handleAddTip() {
+    setModalVisible(true);
   }
   return (
     <div className={styles.TipWrapper}>
@@ -34,16 +30,7 @@ export default function Tip() {
       <div className={styles.TipContentWrapper}>
         <div className={styles.reviewInputWrapper}>
           <div className={styles.reviewInputBox}>
-            <input
-              type="text"
-              placeholder="리뷰 남겨주세요"
-              className={styles.reviewInput}
-              maxLength={100}
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-              ref={commentRef}
-            />
-            <p className={styles.inputLen}>{comment.length} / 100</p>
+            {modalVisible && <AddTip setModalVisible={setModalVisible} />}
           </div>
           <div className={styles.reviewBtn} onClick={handleAddTip}>
             리뷰 추가

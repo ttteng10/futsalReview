@@ -4,6 +4,7 @@ import Select from "react-select";
 import styles from "./Add.module.css";
 import { addFutsalImg, addFutsalShoes } from "../../data/supabaseClient";
 import { useNavigate } from "react-router-dom";
+import { addTip } from "../../data/supabaseClient";
 
 const BRANDS = [
   { label: "나이키", value: "Nike" },
@@ -135,6 +136,61 @@ export default function Add({ setModalVisible }) {
         </div>
         <div className={styles.ShoeImgAddBtn} onClick={handleAdd}>
           풋살화 추가
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+export function AddTip({ setModalVisible }) {
+  const [comment, setComment] = useState("");
+  const navigate = useNavigate();
+
+  const commentRef = useRef(null);
+
+  function handleCancel() {
+    setModalVisible(false);
+  }
+
+  async function handleAddTip() {
+    if (comment !== "") {
+      await addTip(comment);
+      setComment("");
+      navigate(`/home/tip`);
+    } else {
+      commentRef.current.focus();
+    }
+  }
+  return (
+    <motion.div
+      className={styles.AddWrapper}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      open
+    >
+      <p className={styles.AddModalTitle}>꿀팁 및 리뷰</p>
+      <div className={styles.AddTipWrapper}>
+        <textarea
+          ref={commentRef}
+          className={styles.TipInput}
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          maxLength={300}
+          placeholder="리뷰 남겨주세요"
+        />
+        <p className={styles.CommentLenLabel}>{comment.length} / 300</p>
+      </div>
+      <div className={styles.Buttons}>
+        <div className={styles.ShoeImgCancelBtn} onClick={handleCancel}>
+          취소
+        </div>
+        <div className={styles.ShoeImgAddBtn} onClick={handleAddTip}>
+          추가
         </div>
       </div>
     </motion.div>
