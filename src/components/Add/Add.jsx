@@ -156,6 +156,7 @@ export function AddTip({ setModalVisible }) {
     if (comment !== "") {
       await addTip(comment);
       setComment("");
+      setModalVisible(false);
       navigate(`/home/tip`);
     } else {
       commentRef.current.focus();

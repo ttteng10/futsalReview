@@ -49,7 +49,7 @@ export default function Tip() {
                     <div className={styles.RecommandTipDay}>
                       {new Date(item.created_at)
                         .toLocaleDateString("ko-KR")
-                        .slice(2)}
+                        .slice(2, 11)}
                     </div>
                     <div className={styles.RecommandTip}>{item.tip}</div>
                   </div>
