@@ -13,7 +13,7 @@ import {
   addDetailComment,
   getCommentById,
 } from "../../data/supabaseClient";
-import { Suspense, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import Loading from "../../components/Loading/Loading";
 
 const brandKR = new Map([
@@ -31,6 +31,7 @@ export default function Detail() {
   const { detailData, commentData } = useLoaderData();
   const [likeState, setLikeState] = useState(false);
   const [comment, setComment] = useState("");
+  const commentRef = useRef();
   const navigate = useNavigate();
   async function handleIncrement(id) {
     setLikeState(true);
@@ -43,9 +44,13 @@ export default function Detail() {
     navigate(`/home/detail/${id}`);
   }
   async function handleAddReview(id) {
-    await addDetailComment(id, comment);
-    setComment("");
-    navigate(`/home/detail/${id}`);
+    if (comment !== "") {
+      await addDetailComment(id, comment);
+      setComment("");
+      navigate(`/home/detail/${id}`);
+    } else {
+      commentRef.current.focus();
+    }
   }
   return (
     <Suspense fallback={<Loading />}>
@@ -86,7 +91,7 @@ export default function Detail() {
                           : () => handleDecrement(detailShoe.id)
                       }
                     >
-                      추천하기
+                      {likeState ? "추천취소" : "추천하기"}
                     </div>
                   </div>
                 </div>
@@ -103,6 +108,7 @@ export default function Detail() {
                     maxLength={100}
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
+                    ref={commentRef}
                   />
                   <p className={styles.inputLen}>{comment.length} / 100</p>
                 </div>

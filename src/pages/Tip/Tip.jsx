@@ -6,17 +6,22 @@ import {
   useNavigate,
 } from "react-router-dom";
 import styles from "./Tip.module.css";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useRef } from "react";
 import { addTip, getAllTips } from "../../data/supabaseClient";
 
 export default function Tip() {
   const navigate = useNavigate();
   const { tipData } = useLoaderData();
   const [comment, setComment] = useState("");
+  const commentRef = useRef();
   async function handleAddTip() {
-    await addTip(comment);
-    setComment("");
-    navigate(`/home/tip`);
+    if (comment !== "") {
+      await addTip(comment);
+      setComment("");
+      navigate(`/home/tip`);
+    } else {
+      commentRef.current.focus();
+    }
   }
   return (
     <div className={styles.TipWrapper}>
@@ -36,6 +41,7 @@ export default function Tip() {
               maxLength={100}
               value={comment}
               onChange={(e) => setComment(e.target.value)}
+              ref={commentRef}
             />
             <p className={styles.inputLen}>{comment.length} / 100</p>
           </div>
