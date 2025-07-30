@@ -1,3 +1,12 @@
+.ModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
 .AddWrapper {
   width: 500px;
   /* aspect-ratio: 1 / 1; */
@@ -17,7 +26,7 @@
   transform: translate(-50%, -50%);
   background-color: white;
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .AddModalTitle {

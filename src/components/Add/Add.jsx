@@ -67,78 +67,83 @@ export default function Add({ setModalVisible }) {
       return;
     } else {
       setModalVisible(false);
-      navigate("/");
+      navigate("/home");
     }
   }
   return (
-    <motion.div
-      className={styles.AddWrapper}
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
-      }}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-      open
-    >
-      <p className={styles.AddModalTitle}>풋살화 추가하기</p>
-      <div className={styles.AddNameWrapper}>
-        <p className={styles.ShoeNameLabel}>제품명</p>
-        <input
-          ref={nameInputRef}
-          type="text"
-          className={styles.ShoeNameInput}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className={styles.AddNameWrapper}>
-        <p className={styles.ShoeNameLabel}>브랜드</p>
-        <Select
-          options={BRANDS}
-          defaultValue={BRANDS[0]}
-          onChange={handleBrand}
-          styles={{
-            control: (styles) => ({
-              ...styles,
-              height: "50px",
-              fontWeight: "bold",
-              fontFamily: "Quicksand, sans-serif",
-            }),
-            option: (styles) => ({
-              ...styles,
-              fontWeight: "bold",
-              fontFamily: "Quicksand, sans-serif",
-            }),
-          }}
-        />
-      </div>
-      <div className={styles.AddImgWrapper}>
-        <p className={styles.ShoeNameLabel}>이미지</p>
-        <div className={styles.ShoeImgAddBtnWrapper}>
-          <div className={styles.ShoeImgBtn} onClick={handleDivClick}>
-            추가하기
+    <>
+      <div className={styles.ModalOverlay} />
+      <motion.div
+        className={styles.AddWrapper}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        open
+      >
+        <p className={styles.AddModalTitle}>풋살화 추가하기</p>
+        <div className={styles.AddNameWrapper}>
+          <p className={styles.ShoeNameLabel}>제품명</p>
+          <input
+            ref={nameInputRef}
+            type="text"
+            className={styles.ShoeNameInput}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div className={styles.AddNameWrapper}>
+          <p className={styles.ShoeNameLabel}>브랜드</p>
+          <Select
+            options={BRANDS}
+            defaultValue={BRANDS[0]}
+            onChange={handleBrand}
+            styles={{
+              control: (styles) => ({
+                ...styles,
+                height: "50px",
+                fontWeight: "bold",
+                fontFamily: "Quicksand, sans-serif",
+              }),
+              option: (styles) => ({
+                ...styles,
+                fontWeight: "bold",
+                fontFamily: "Quicksand, sans-serif",
+              }),
+            }}
+          />
+        </div>
+        <div className={styles.AddImgWrapper}>
+          <p className={styles.ShoeNameLabel}>이미지</p>
+          <div className={styles.ShoeImgAddBtnWrapper}>
+            <div className={styles.ShoeImgBtn} onClick={handleDivClick}>
+              추가하기
+            </div>
+            {imgfile && (
+              <div className={styles.ShoeImgLink}>{imgfile.name}</div>
+            )}
           </div>
-          {imgfile && <div className={styles.ShoeImgLink}>{imgfile.name}</div>}
         </div>
-      </div>
-      <input
-        type="file"
-        accept="image/*"
-        style={{ display: "none" }}
-        ref={fileInputRef}
-        onChange={handleFileChange}
-      />
-      <div className={styles.Buttons}>
-        <div className={styles.ShoeImgCancelBtn} onClick={handleCancel}>
-          취소
+        <input
+          type="file"
+          accept="image/*"
+          style={{ display: "none" }}
+          ref={fileInputRef}
+          onChange={handleFileChange}
+        />
+        <div className={styles.Buttons}>
+          <div className={styles.ShoeImgCancelBtn} onClick={handleCancel}>
+            취소
+          </div>
+          <div className={styles.ShoeImgAddBtn} onClick={handleAdd}>
+            풋살화 추가
+          </div>
         </div>
-        <div className={styles.ShoeImgAddBtn} onClick={handleAdd}>
-          풋살화 추가
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }
 
@@ -163,37 +168,40 @@ export function AddTip({ setModalVisible }) {
     }
   }
   return (
-    <motion.div
-      className={styles.AddWrapper}
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
-      }}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-      open
-    >
-      <p className={styles.AddModalTitle}>꿀팁 및 리뷰</p>
-      <div className={styles.AddTipWrapper}>
-        <textarea
-          ref={commentRef}
-          className={styles.TipInput}
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          maxLength={300}
-          placeholder="리뷰 남겨주세요"
-        />
-        <p className={styles.CommentLenLabel}>{comment.length} / 300</p>
-      </div>
-      <div className={styles.Buttons}>
-        <div className={styles.ShoeImgCancelBtn} onClick={handleCancel}>
-          취소
+    <>
+      <div className={styles.ModalOverlay} />
+      <motion.div
+        className={styles.AddWrapper}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        open
+      >
+        <p className={styles.AddModalTitle}>꿀팁 및 리뷰</p>
+        <div className={styles.AddTipWrapper}>
+          <textarea
+            ref={commentRef}
+            className={styles.TipInput}
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+            maxLength={300}
+            placeholder="리뷰 남겨주세요"
+          />
+          <p className={styles.CommentLenLabel}>{comment.length} / 300</p>
         </div>
-        <div className={styles.ShoeImgAddBtn} onClick={handleAddTip}>
-          추가
+        <div className={styles.Buttons}>
+          <div className={styles.ShoeImgCancelBtn} onClick={handleCancel}>
+            취소
+          </div>
+          <div className={styles.ShoeImgAddBtn} onClick={handleAddTip}>
+            추가
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }
