@@ -73,3 +73,81 @@
   font-weight: bold;
   font-family: "Quicksand", sans-serif;
 }
+
+@media screen and (max-width: 1024px) {
+  .HeaderWrapper {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5ea152;
+  }
+
+  .HeaderLogo {
+    /* height: 100%; */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  .HeaderTitle {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+  }
+
+  .HeaderSubTitle {
+    font-size: 10px;
+    /* font-weight: 500; */
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+  }
+
+  .HeaderMenus {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-right: 20px;
+  }
+
+  .MenuBtn {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    /* width: 6vw; */
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .active {
+    color: burlywood;
+    text-decoration: none;
+  }
+
+  .linkTag {
+    color: white;
+    text-decoration: none;
+  }
+
+  .MenuName {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+  }
+}

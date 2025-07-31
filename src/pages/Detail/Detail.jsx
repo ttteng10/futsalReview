@@ -133,9 +133,9 @@ export default function Detail() {
                 <Await resolve={commentData}>
                   {(comments) => (
                     <div className={styles.reviewsWrapper}>
-                      {comments.map((item, index) => (
+                      {comments.map((item) => (
                         <div className={styles.reviewDiv} key={item.id}>
-                          {index + 1}. {item.comment}
+                          {item.comment}
                         </div>
                       ))}
                     </div>

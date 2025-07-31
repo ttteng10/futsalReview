@@ -130,3 +130,121 @@
   color: white;
   background-color: black;
 }
+
+@media screen and (max-width: 1024px) {
+  .PickContentWrapper {
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .PickHeader {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .PickHeaderTitle {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    color: #5ea152;
+  }
+  .PickHeaderSubTitle {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    color: #5ea152;
+  }
+
+  .PickSliderWrapper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: block;
+    justify-content: center;
+  }
+
+  .sliderDiv {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .sliderImg {
+    width: 100%;
+    height: 300px;
+    /* height: 80%; */
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+  }
+  .sliderDes {
+    width: 100%;
+    height: 50px;
+    /* height: 20%; */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    /* color: #5ea152; */
+    color: white;
+  }
+
+  .ButtonWrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .StartButton {
+    width: 120px;
+    height: 40px;
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: bold;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Quicksand", sans-serif;
+    color: white;
+    background-color: black;
+  }
+}

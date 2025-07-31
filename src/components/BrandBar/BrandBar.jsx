@@ -19,19 +19,21 @@ export default function BrandBar({ filter, setFilter, setSearchInput }) {
 
   return (
     <div className={styles.BrandBarWrapper}>
-      {BRANDS.map((item) => (
-        <div
-          key={item.filter}
-          className={
-            filter === item.filter
-              ? `${styles.BrandBtn} ${styles.active}`
-              : styles.BrandBtn
-          }
-          onClick={() => handleBtn(item.filter)}
-        >
-          {item.brand}
-        </div>
-      ))}
+      <div className={styles.BrandBarBtns}>
+        {BRANDS.map((item) => (
+          <div
+            key={item.filter}
+            className={
+              filter === item.filter
+                ? `${styles.BrandBtn} ${styles.active}`
+                : styles.BrandBtn
+            }
+            onClick={() => handleBtn(item.filter)}
+          >
+            {item.brand}
+          </div>
+        ))}
+      </div>
       <div className={styles.InputWrapper}>
         <input
           type="text"

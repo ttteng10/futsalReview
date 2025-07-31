@@ -223,3 +223,224 @@
   font-family: "Quicksand", sans-serif;
   color: #414956;
 }
+
+@media screen and (max-width: 1024px) {
+  .ModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+  .AddWrapper {
+    width: 90%;
+    /* aspect-ratio: 1 / 1; */
+    height: 350px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    gap: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+
+  .AddModalTitle {
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 0 0 0 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .AddNameWrapper {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .ShoeNameLabel {
+    width: 100px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: "Quicksand", sans-serif;
+    color: #414956;
+  }
+
+  .ShoeNameInput {
+    display: block;
+    width: 90%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border-radius: 4px;
+    border: 1px solid #d9e2f1;
+    background-color: #fff;
+    color: #414956;
+    font-size: 0.8rem;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .AddImgWrapper {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .ShoeImgAddBtnWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ShoeImgBtn {
+    width: 100px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .ShoeImgLink {
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    overflow-x: auto;
+  }
+
+  .Buttons {
+    /* width: 100%; */
+    height: 50px;
+    margin: auto 0 10px 0;
+    padding: 0 15px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+  }
+
+  .ShoeImgCancelBtn {
+    width: 100px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .ShoeImgAddBtn {
+    width: 120px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .AddTipWrapper {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .TipInput {
+    display: block;
+    width: 90%;
+    height: 150px;
+    margin: 0;
+    padding: 5px 0 0 5px;
+    border-radius: 4px;
+    border: 1px solid #d9e2f1;
+    background-color: #fff;
+    color: #414956;
+    font-size: 0.8rem;
+    font-family: "Quicksand", sans-serif;
+    line-height: normal;
+    resize: none;
+  }
+  .CommentLenLabel {
+    width: 90%;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-family: "Quicksand", sans-serif;
+    color: #414956;
+  }
+}

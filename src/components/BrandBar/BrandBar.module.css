@@ -10,6 +10,15 @@
   box-sizing: border-box;
 }
 
+.BrandBarBtns {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
 .BrandBtn {
   height: 40px;
   margin: 0;
@@ -49,4 +58,71 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .BrandBarWrapper {
+    width: 100%;
+    height: 110px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    box-sizing: border-box;
+  }
+
+  .BrandBarBtns {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .BrandBtn {
+    height: 40px;
+    margin: 0;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8d8d8d;
+    border: 1px solid #8d8d8d;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .active {
+    color: black;
+    border: 2px solid black;
+  }
+
+  .InputWrapper {
+    width: 80%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inputStyle {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0 0 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
